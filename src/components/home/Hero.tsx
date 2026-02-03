@@ -8,20 +8,17 @@ export function Hero() {
       className="relative min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden"
       aria-label="Secțiune principală"
     >
-      {/* Pe telefon: fără imagine, doar fundal închis. De la md: imagine hero */}
+      {/* Imagine hero vizibilă pe toate dispozitivele */}
       <div className="absolute inset-0 z-0">
-        {/* Fundal mobil: doar culoare */}
-        <div className="absolute inset-0 bg-bark-900 md:bg-transparent" aria-hidden />
-        {/* Imagine hero (ascunsă pe telefon, vizibilă de la tabletă în sus) */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: 'url(/hero.jpg)' }}
           role="img"
           aria-label="Atmosferă Boxx Barber Club – stație de frizerie și relaxare"
         />
-        <div className="absolute inset-0 bg-bark-900/70 md:bg-bark-900/70 z-10" aria-hidden />
+        <div className="absolute inset-0 bg-bark-900/70 z-10" aria-hidden />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-bark-900/90 via-bark-900/50 to-transparent z-10 hidden md:block"
+          className="absolute inset-0 bg-gradient-to-r from-bark-900/90 via-bark-900/50 to-transparent z-10"
           aria-hidden
         />
       </div>
@@ -51,7 +48,10 @@ export function Hero() {
             className="flex flex-wrap gap-4 justify-center md:justify-start animate-slide-up opacity-0"
             style={{ animationDelay: '0.5s' }}
           >
-            <Link href="/contact" className="btn-primary">
+            <Link
+              href="/contact"
+              className="btn-primary border-2 border-white focus-visible:outline-white"
+            >
               Programează o vizită
             </Link>
             <Link
